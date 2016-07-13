@@ -9,12 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-exports.Hero = Hero;
 var HEROES = [
     { id: 11, name: 'Mr. Nice' },
     { id: 12, name: 'Narco' },
@@ -36,10 +30,12 @@ var AppComponent = (function () {
             name: 'Windstorm'
         };
     }
+    AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app/app.component.html'
+            templateUrl: 'app/app.component.html',
+            styleUrls: ['app/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
