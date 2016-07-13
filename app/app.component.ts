@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Hero } from './classes/hero';
 
+import { HeroDetailsComponent } from '../app/detail/hero-detail.component';
+
 
 
 const HEROES: Hero[] = [
@@ -21,7 +23,9 @@ const HEROES: Hero[] = [
 @Component({
 	selector: 'my-app',
 	templateUrl: 'app/app.component.html',
-	styleUrls: ['app/app.component.css']
+	styleUrls: ['app/app.component.css'],
+
+	directives: [HeroDetailsComponent],
 
 
 })
@@ -30,15 +34,11 @@ const HEROES: Hero[] = [
 export class AppComponent {
 	title = 'My Heroes';
 
+	heroes = HEROES;
+
+
 	selectedHero: Hero;
 	
-	public heroes = HEROES;
-
-	hero: Hero = {
-		id: 1,
-		name: 'Windstorm'
-	};
-
 	onSelect(hero: Hero) { this.selectedHero = hero;}
  
 }
