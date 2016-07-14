@@ -9,16 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var heroes_component_1 = require('./heroes.component');
+var router_1 = require('@angular/router');
 var hero_service_1 = require('./services/hero.service');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Super Heroes';
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>App</h1><my-heroes></my-heroes>",
-            directives: [heroes_component_1.HeroesComponent],
+            template: "\n\t<h1>{{title}}</h1>\n\t<a [routerLink]=\"['/heroes']\">Heroes</a>\n\t\n\t<router-outlet>\n\t",
+            directives: [router_1.ROUTER_DIRECTIVES],
             providers: [hero_service_1.HeroService]
         }), 
         __metadata('design:paramtypes', [])
