@@ -9,29 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_detail_component_1 = require('../app/detail/hero-detail.component');
+var heroes_component_1 = require('./heroes.component');
 var hero_service_1 = require('./services/hero.service');
 var AppComponent = (function () {
-    function AppComponent(heroService) {
-        this.heroService = heroService;
-        this.title = 'My Heroes';
+    function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
-    };
-    AppComponent.prototype.getHeroes = function () {
-        this.heroes = this.heroService.getHeroes();
-    };
-    AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app/app.component.html',
-            styleUrls: ['app/app.component.css'],
-            directives: [hero_detail_component_1.HeroDetailsComponent],
+            template: "<h1>App</h1><my-heroes></my-heroes>",
+            directives: [heroes_component_1.HeroesComponent],
             providers: [hero_service_1.HeroService]
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
